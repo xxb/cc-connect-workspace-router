@@ -1093,7 +1093,7 @@ func (e *Engine) getOrCreateWorkspaceAgent(workspace string) (Agent, *SessionMan
 		}
 	}
 
-	agent, err := CreateAgent("claudecode", opts)
+	agent, err := CreateAgent(e.agent.Name(), opts)
 	if err != nil {
 		return nil, nil, fmt.Errorf("create workspace agent for %s: %w", workspace, err)
 	}
